@@ -30,11 +30,9 @@ namespace Stochastic {
     public:
         explicit Vessel(const std::string& name);
 
-        // API to add species and reactions
         std::shared_ptr<Species> add(const std::string& name, size_t initial_count);
         void add(const ReactionBuilder& builder);
 
-        // Access and query
         std::shared_ptr<Species> environment() const;
         std::shared_ptr<Species> get_species(const std::string& name) const;
         const std::vector<std::shared_ptr<Species>>& get_species() const;

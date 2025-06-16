@@ -7,7 +7,7 @@
 
 namespace Stochastic {
 
-    // R4 - Main simulation interface
+    // R4
     void Simulator::runSimulation(Vessel& vessel, double endTime, Observer* observer) {
         std::function<void(double, const std::vector<std::shared_ptr<Species>>&)> cb = nullptr;
 
@@ -22,7 +22,7 @@ namespace Stochastic {
         vessel.simulate(endTime, cb);
     }
 
-    // R8 - Parallel simulation implementation
+    // R8
     template<typename ResultType>
     std::vector<ResultType> Simulator::runParallelSimulations(
         Vessel& vessel,
@@ -45,10 +45,9 @@ namespace Stochastic {
 
             size_t start = index, end = start + count;
 
-            // R8 - Launch parallel simulation tasks
+            // R8
             futures.push_back(std::async(std::launch::async, [&, start, end]() {
                 for (size_t i = start; i < end; ++i) {
-                    // Create independent copy for each simulation
                     Vessel copy = vessel;
                     copy.simulate(endTime);
                     results[i] = resultExtractor(copy);
@@ -57,12 +56,11 @@ namespace Stochastic {
             index = end;
         }
 
-        // Wait for all threads to complete
         for (auto& f : futures) f.get();
         return results;
     }
 
-    // R8 - Explicit template instantiation for common types
+    // R8
     template std::vector<size_t> Simulator::runParallelSimulations<size_t>(
         Vessel&, double, size_t, std::function<size_t(const Vessel&)>, size_t);
 

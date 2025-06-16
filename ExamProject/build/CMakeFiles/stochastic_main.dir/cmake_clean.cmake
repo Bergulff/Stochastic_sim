@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.o"
+  "CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.o.d"
   "CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.o"
   "CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.o.d"
   "CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.o"

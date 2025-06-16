@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o"
   "CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o.d"
+  "CMakeFiles/benchmark.dir/examples/catalytic_reaction.cpp.o"
+  "CMakeFiles/benchmark.dir/examples/catalytic_reaction.cpp.o.d"
   "CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o"
   "CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o.d"
   "CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o"

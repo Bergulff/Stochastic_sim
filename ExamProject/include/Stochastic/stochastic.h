@@ -20,11 +20,8 @@
 namespace Stochastic {
     Vessel seir(uint32_t N);  // Covid-19 SEIHR model
     Vessel circadian_rhythm();
+    Vessel simple_catalytic(size_t A0, size_t B0, size_t C_count, double lambda = 0.001);
+
 
 }
-
-
-// This header provides the complete stochastic simulation library interface
-// Include this single header to access all functionality
-
 #endif //STOCHASTIC_H

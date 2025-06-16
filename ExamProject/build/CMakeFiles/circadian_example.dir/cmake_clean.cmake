@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o"
-  "CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o.d"
   "CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o"
   "CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o.d"
   "circadian_example"

@@ -72,24 +72,10 @@ include CMakeFiles/circadian_example.dir/flags.make
 CMakeFiles/circadian_example.dir/codegen:
 .PHONY : CMakeFiles/circadian_example.dir/codegen
 
-CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o: CMakeFiles/circadian_example.dir/flags.make
-CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/Stochastic_sim/ExamProject/examples/circadian_main.cpp
-CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o: CMakeFiles/circadian_example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o -MF CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o.d -o CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_main.cpp"
-
-CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_main.cpp" > CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.i
-
-CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_main.cpp" -o CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.s
-
 CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o: CMakeFiles/circadian_example.dir/flags.make
 CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp
 CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o: CMakeFiles/circadian_example.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o -MF CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o.d -o CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp"
 
 CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.i: cmake_force
@@ -102,18 +88,16 @@ CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.s: cmake_force
 
 # Object files for target circadian_example
 circadian_example_OBJECTS = \
-"CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o" \
 "CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o"
 
 # External object files for target circadian_example
 circadian_example_EXTERNAL_OBJECTS =
 
-circadian_example: CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o
 circadian_example: CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o
 circadian_example: CMakeFiles/circadian_example.dir/build.make
 circadian_example: libstochastic_lib.a
 circadian_example: CMakeFiles/circadian_example.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable circadian_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable circadian_example"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/circadian_example.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

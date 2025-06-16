@@ -54,6 +54,6 @@ namespace Stochastic {
         return {peak_time_, peak_value_};
     }
 
-    // Note: FunctionObserver<T> is implemented inline in the header to support templating.
+
 
 } // namespace Stochastic

@@ -1,1 +1,1 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o -o circadian_example  libstochastic_lib.a
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o -o circadian_example  libstochastic_lib.a

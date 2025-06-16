@@ -1,45 +1,3 @@
-#[[
-cmake_minimum_required(VERSION 3.31)
-project(ExamProject)
-
-set(CMAKE_CXX_STANDARD 23)
-
-# Include all headers
-include_directories(include)
-
-# Define the core simulation library (no main() files here!)
-add_library(ExamProject STATIC
-        src/species.cpp
-        src/reaction.cpp
-        src/vessel.cpp
-        src/simulator.cpp
-        src/visualization.cpp
-        src/observer.cpp
-
-        examples/covid_seihr.cpp         # ✅ library only
-        examples/circadian_rythm.cpp     # ✅ library only
-)
-
-# Link public headers for CLion indexing
-target_include_directories(ExamProject PUBLIC include)
-
-# === Examples with main() ===
-#[=[
-add_executable(seir examples/seihr_main.cpp)
-target_link_libraries(seir ExamProject)
-
-add_executable(circadian examples/circadian_main.cpp)
-target_link_libraries(circadian ExamProject)
-]=]
-
-add_executable(main examples/main.cpp)
-target_link_libraries(main ExamProject)
-
-
-# === Benchmark ===
-add_executable(benchmark benchmarks/benchmark.cpp)
-target_link_libraries(benchmark ExamProject)
-]]
 cmake_minimum_required(VERSION 3.16)
 project(StochasticSimulation)
 
@@ -72,10 +30,11 @@ set(LIBRARY_SOURCES
 # Create static library
 add_library(stochastic_lib STATIC ${LIBRARY_SOURCES})
 
-# R5 - Example source files
+# R5 - Example source files (now includes all three examples)
 set(EXAMPLE_SOURCES
         examples/circadian_rythm.cpp
         examples/covid_seihr.cpp
+        examples/catalytic_reaction.cpp
 )
 
 # Main executable
@@ -89,7 +48,7 @@ target_link_libraries(stochastic_main stochastic_lib)
 
 # Individual example executables
 add_executable(circadian_example
-        examples/circadian_main.cpp
+        #examples/circadian_main.cpp
         examples/circadian_rythm.cpp
 )
 target_link_libraries(circadian_example stochastic_lib)
@@ -100,24 +59,84 @@ add_executable(seihr_example
 )
 target_link_libraries(seihr_example stochastic_lib)
 
-# R10 - Benchmark executable (using your updated benchmark.cpp)
+# R5 - New simple catalytic reaction example executable
+add_executable(simple_catalytic_example
+        examples/catalytic_reaction.cpp
+)
+target_link_libraries(simple_catalytic_example stochastic_lib)
+
+# R10 - Benchmark executable
 add_executable(benchmark
         benchmarks/benchmark.cpp
         ${EXAMPLE_SOURCES}
 )
 target_link_libraries(benchmark stochastic_lib)
 
-# R9 - Unit tests (if you create test files)
-# Uncomment when you add unit tests
-# add_executable(unit_tests tests/test_main.cpp tests/test_symbol_table.cpp)
-# target_link_libraries(unit_tests stochastic_lib)
+# R9 - Unit tests with corrected filenames
+add_executable(unit_tests
+        tests/test.cpp
+        ${EXAMPLE_SOURCES}
+)
+target_link_libraries(unit_tests stochastic_lib)
+
+# Make tests discoverable by CTest
+enable_testing()
+add_test(NAME StochasticLibraryTests COMMAND unit_tests)
+
+# Optional: Add a custom target to run tests
+add_custom_target(run_tests
+        COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
+        DEPENDS unit_tests
+        COMMENT "Running unit tests"
+)
 
 # Threading support for R8
 find_package(Threads REQUIRED)
 target_link_libraries(stochastic_main Threads::Threads)
 target_link_libraries(circadian_example Threads::Threads)
 target_link_libraries(seihr_example Threads::Threads)
+target_link_libraries(simple_catalytic_example Threads::Threads)
 target_link_libraries(benchmark Threads::Threads)
+target_link_libraries(unit_tests Threads::Threads)
 
 # Create output directory
 file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/output)
+
+# Print build information
+message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ standard: ${CMAKE_CXX_STANDARD}")
+message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID}")
+
+# Optional: Set up IDE folder structure
+set_target_properties(stochastic_main circadian_example seihr_example simple_catalytic_example PROPERTIES FOLDER "Examples")
+set_target_properties(benchmark PROPERTIES FOLDER "Benchmarks")
+set_target_properties(unit_tests PROPERTIES FOLDER "Tests")
+set_target_properties(stochastic_lib PROPERTIES FOLDER "Libraries")
+
+# R5 - Custom target to run all three examples
+add_custom_target(run_all_examples
+        COMMAND circadian_example
+        COMMAND seihr_example
+        COMMAND simple_catalytic_example
+        DEPENDS circadian_example seihr_example simple_catalytic_example
+        COMMENT "Running all three example systems (R5)"
+)
+
+# Optional: Custom targets for individual example runs
+add_custom_target(run_circadian
+        COMMAND circadian_example
+        DEPENDS circadian_example
+        COMMENT "Running circadian rhythm example"
+)
+
+add_custom_target(run_covid
+        COMMAND seihr_example
+        DEPENDS seihr_example
+        COMMENT "Running COVID-19 SEIHR example"
+)
+
+add_custom_target(run_catalytic
+        COMMAND simple_catalytic_example
+        DEPENDS simple_catalytic_example
+        COMMENT "Running simple catalytic reaction example"
+)

@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topic
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -169,6 +179,19 @@ seihr_example/fast:
 .PHONY : seihr_example/fast
 
 #=============================================================================
+# Target rules for targets named simple_catalytic_example
+
+# Build rule for target.
+simple_catalytic_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_catalytic_example
+.PHONY : simple_catalytic_example
+
+# fast build rule for target.
+simple_catalytic_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_catalytic_example.dir/build.make CMakeFiles/simple_catalytic_example.dir/build
+.PHONY : simple_catalytic_example/fast
+
+#=============================================================================
 # Target rules for targets named benchmark
 
 # Build rule for target.
@@ -180,6 +203,84 @@ benchmark: cmake_check_build_system
 benchmark/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
 .PHONY : benchmark/fast
+
+#=============================================================================
+# Target rules for targets named unit_tests
+
+# Build rule for target.
+unit_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit_tests
+.PHONY : unit_tests
+
+# fast build rule for target.
+unit_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/build
+.PHONY : unit_tests/fast
+
+#=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
+#=============================================================================
+# Target rules for targets named run_all_examples
+
+# Build rule for target.
+run_all_examples: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_all_examples
+.PHONY : run_all_examples
+
+# fast build rule for target.
+run_all_examples/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_all_examples.dir/build.make CMakeFiles/run_all_examples.dir/build
+.PHONY : run_all_examples/fast
+
+#=============================================================================
+# Target rules for targets named run_circadian
+
+# Build rule for target.
+run_circadian: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_circadian
+.PHONY : run_circadian
+
+# fast build rule for target.
+run_circadian/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_circadian.dir/build.make CMakeFiles/run_circadian.dir/build
+.PHONY : run_circadian/fast
+
+#=============================================================================
+# Target rules for targets named run_covid
+
+# Build rule for target.
+run_covid: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_covid
+.PHONY : run_covid
+
+# fast build rule for target.
+run_covid/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_covid.dir/build.make CMakeFiles/run_covid.dir/build
+.PHONY : run_covid/fast
+
+#=============================================================================
+# Target rules for targets named run_catalytic
+
+# Build rule for target.
+run_catalytic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_catalytic
+.PHONY : run_catalytic
+
+# fast build rule for target.
+run_catalytic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_catalytic.dir/build.make CMakeFiles/run_catalytic.dir/build
+.PHONY : run_catalytic/fast
 
 benchmarks/benchmark.o: benchmarks/benchmark.cpp.o
 .PHONY : benchmarks/benchmark.o
@@ -205,29 +306,38 @@ benchmarks/benchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.s
 .PHONY : benchmarks/benchmark.cpp.s
 
-examples/circadian_main.o: examples/circadian_main.cpp.o
-.PHONY : examples/circadian_main.o
+examples/catalytic_reaction.o: examples/catalytic_reaction.cpp.o
+.PHONY : examples/catalytic_reaction.o
 
 # target to build an object file
-examples/circadian_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o
-.PHONY : examples/circadian_main.cpp.o
+examples/catalytic_reaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_catalytic_example.dir/build.make CMakeFiles/simple_catalytic_example.dir/examples/catalytic_reaction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/catalytic_reaction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/catalytic_reaction.cpp.o
+.PHONY : examples/catalytic_reaction.cpp.o
 
-examples/circadian_main.i: examples/circadian_main.cpp.i
-.PHONY : examples/circadian_main.i
+examples/catalytic_reaction.i: examples/catalytic_reaction.cpp.i
+.PHONY : examples/catalytic_reaction.i
 
 # target to preprocess a source file
-examples/circadian_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.i
-.PHONY : examples/circadian_main.cpp.i
+examples/catalytic_reaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_catalytic_example.dir/build.make CMakeFiles/simple_catalytic_example.dir/examples/catalytic_reaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/catalytic_reaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/catalytic_reaction.cpp.i
+.PHONY : examples/catalytic_reaction.cpp.i
 
-examples/circadian_main.s: examples/circadian_main.cpp.s
-.PHONY : examples/circadian_main.s
+examples/catalytic_reaction.s: examples/catalytic_reaction.cpp.s
+.PHONY : examples/catalytic_reaction.s
 
 # target to generate assembly for a file
-examples/circadian_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.s
-.PHONY : examples/circadian_main.cpp.s
+examples/catalytic_reaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_catalytic_example.dir/build.make CMakeFiles/simple_catalytic_example.dir/examples/catalytic_reaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/catalytic_reaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/catalytic_reaction.cpp.s
+.PHONY : examples/catalytic_reaction.cpp.s
 
 examples/circadian_rythm.o: examples/circadian_rythm.cpp.o
 .PHONY : examples/circadian_rythm.o
@@ -237,6 +347,7 @@ examples/circadian_rythm.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/circadian_rythm.cpp.o
 .PHONY : examples/circadian_rythm.cpp.o
 
 examples/circadian_rythm.i: examples/circadian_rythm.cpp.i
@@ -247,6 +358,7 @@ examples/circadian_rythm.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/circadian_rythm.cpp.i
 .PHONY : examples/circadian_rythm.cpp.i
 
 examples/circadian_rythm.s: examples/circadian_rythm.cpp.s
@@ -257,6 +369,7 @@ examples/circadian_rythm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/circadian_rythm.cpp.s
 .PHONY : examples/circadian_rythm.cpp.s
 
 examples/covid_seihr.o: examples/covid_seihr.cpp.o
@@ -267,6 +380,7 @@ examples/covid_seihr.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/covid_seihr.cpp.o
 .PHONY : examples/covid_seihr.cpp.o
 
 examples/covid_seihr.i: examples/covid_seihr.cpp.i
@@ -277,6 +391,7 @@ examples/covid_seihr.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/covid_seihr.cpp.i
 .PHONY : examples/covid_seihr.cpp.i
 
 examples/covid_seihr.s: examples/covid_seihr.cpp.s
@@ -287,6 +402,7 @@ examples/covid_seihr.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/examples/covid_seihr.cpp.s
 .PHONY : examples/covid_seihr.cpp.s
 
 examples/main.o: examples/main.cpp.o
@@ -481,6 +597,30 @@ src/visualization.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/visualization.cpp.s
 .PHONY : src/visualization.cpp.s
 
+tests/test.o: tests/test.cpp.o
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/test.cpp.o
+.PHONY : tests/test.cpp.o
+
+tests/test.i: tests/test.cpp.i
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/test.cpp.i
+.PHONY : tests/test.cpp.i
+
+tests/test.s: tests/test.cpp.s
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/tests/test.cpp.s
+.PHONY : tests/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -489,17 +629,25 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... run_all_examples"
+	@echo "... run_catalytic"
+	@echo "... run_circadian"
+	@echo "... run_covid"
+	@echo "... run_tests"
 	@echo "... benchmark"
 	@echo "... circadian_example"
 	@echo "... seihr_example"
+	@echo "... simple_catalytic_example"
 	@echo "... stochastic_lib"
 	@echo "... stochastic_main"
+	@echo "... unit_tests"
 	@echo "... benchmarks/benchmark.o"
 	@echo "... benchmarks/benchmark.i"
 	@echo "... benchmarks/benchmark.s"
-	@echo "... examples/circadian_main.o"
-	@echo "... examples/circadian_main.i"
-	@echo "... examples/circadian_main.s"
+	@echo "... examples/catalytic_reaction.o"
+	@echo "... examples/catalytic_reaction.i"
+	@echo "... examples/catalytic_reaction.s"
 	@echo "... examples/circadian_rythm.o"
 	@echo "... examples/circadian_rythm.i"
 	@echo "... examples/circadian_rythm.s"
@@ -530,6 +678,9 @@ help:
 	@echo "... src/visualization.o"
 	@echo "... src/visualization.i"
 	@echo "... src/visualization.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 .PHONY : help
 
 

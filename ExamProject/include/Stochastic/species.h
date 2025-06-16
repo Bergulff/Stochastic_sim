@@ -23,12 +23,11 @@ namespace Stochastic {
         void increment_count(size_t amount = 1);
         void decrement_count(size_t amount = 1);
 
-        // R1 - Operator overloading for reaction syntax
+        // R1
         ReactionBuilder operator+(const Species& other) const;
         ReactionBuilder operator>>(double rate) const;
         ReactionBuilder operator>>=(const Species& product) const;
 
-        // Fix for dereference operator used in examples
         const Species& operator*() const { return *this; }
         Species& operator*() { return *this; }
     };

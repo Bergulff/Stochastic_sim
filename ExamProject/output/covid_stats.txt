@@ -1,6 +1,0 @@
-COVID-19 SEIHR Model Statistics (N=10000)
-Simulations: 100
-Simulation time: 100 days
-Average peak hospitalization: 0
-Maximum peak hospitalization: 0
-Minimum peak hospitalization: 0
