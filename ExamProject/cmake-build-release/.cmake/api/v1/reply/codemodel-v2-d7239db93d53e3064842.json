@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.31"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ExamProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ExamProject::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ExamProject-Release-c3e3431507bb58692531.json",
+					"name" : "ExamProject",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SEIHR::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SEIHR-Release-0b21b84612800325f043.json",
+					"name" : "SEIHR",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark-Release-bdfb734ea147802e3c4e.json",
+					"name" : "benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "circadian::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-circadian-Release-f2046978c5f979bc9f23.json",
+					"name" : "circadian",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-release",
+		"source" : "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
