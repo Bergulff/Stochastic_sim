@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject"
+CMAKE_SOURCE_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build"
+CMAKE_BINARY_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,17 +87,10 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" 0
 .PHONY : all
-
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build//CMakeFiles/progress.marks"
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" 0
-.PHONY : codegen
 
 # The main clean target
 clean:
@@ -124,56 +117,56 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ExamProject
+# Target rules for targets named stochastic_lib
 
 # Build rule for target.
-ExamProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExamProject
-.PHONY : ExamProject
+stochastic_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stochastic_lib
+.PHONY : stochastic_lib
 
 # fast build rule for target.
-ExamProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/build
-.PHONY : ExamProject/fast
+stochastic_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/build
+.PHONY : stochastic_lib/fast
 
 #=============================================================================
-# Target rules for targets named seir
+# Target rules for targets named stochastic_main
 
 # Build rule for target.
-seir: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 seir
-.PHONY : seir
+stochastic_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stochastic_main
+.PHONY : stochastic_main
 
 # fast build rule for target.
-seir/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seir.dir/build.make CMakeFiles/seir.dir/build
-.PHONY : seir/fast
+stochastic_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/build
+.PHONY : stochastic_main/fast
 
 #=============================================================================
-# Target rules for targets named circadian
+# Target rules for targets named circadian_example
 
 # Build rule for target.
-circadian: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 circadian
-.PHONY : circadian
+circadian_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 circadian_example
+.PHONY : circadian_example
 
 # fast build rule for target.
-circadian/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian.dir/build.make CMakeFiles/circadian.dir/build
-.PHONY : circadian/fast
+circadian_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/build
+.PHONY : circadian_example/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named seihr_example
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+seihr_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 seihr_example
+.PHONY : seihr_example
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+seihr_example/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/build
+.PHONY : seihr_example/fast
 
 #=============================================================================
 # Target rules for targets named benchmark
@@ -217,7 +210,7 @@ examples/circadian_main.o: examples/circadian_main.cpp.o
 
 # target to build an object file
 examples/circadian_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian.dir/build.make CMakeFiles/circadian.dir/examples/circadian_main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.o
 .PHONY : examples/circadian_main.cpp.o
 
 examples/circadian_main.i: examples/circadian_main.cpp.i
@@ -225,7 +218,7 @@ examples/circadian_main.i: examples/circadian_main.cpp.i
 
 # target to preprocess a source file
 examples/circadian_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian.dir/build.make CMakeFiles/circadian.dir/examples/circadian_main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.i
 .PHONY : examples/circadian_main.cpp.i
 
 examples/circadian_main.s: examples/circadian_main.cpp.s
@@ -233,7 +226,7 @@ examples/circadian_main.s: examples/circadian_main.cpp.s
 
 # target to generate assembly for a file
 examples/circadian_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian.dir/build.make CMakeFiles/circadian.dir/examples/circadian_main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_main.cpp.s
 .PHONY : examples/circadian_main.cpp.s
 
 examples/circadian_rythm.o: examples/circadian_rythm.cpp.o
@@ -241,7 +234,9 @@ examples/circadian_rythm.o: examples/circadian_rythm.cpp.o
 
 # target to build an object file
 examples/circadian_rythm.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/circadian_rythm.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o
 .PHONY : examples/circadian_rythm.cpp.o
 
 examples/circadian_rythm.i: examples/circadian_rythm.cpp.i
@@ -249,7 +244,9 @@ examples/circadian_rythm.i: examples/circadian_rythm.cpp.i
 
 # target to preprocess a source file
 examples/circadian_rythm.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/circadian_rythm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.i
 .PHONY : examples/circadian_rythm.cpp.i
 
 examples/circadian_rythm.s: examples/circadian_rythm.cpp.s
@@ -257,7 +254,9 @@ examples/circadian_rythm.s: examples/circadian_rythm.cpp.s
 
 # target to generate assembly for a file
 examples/circadian_rythm.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/circadian_rythm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/circadian_example.dir/build.make CMakeFiles/circadian_example.dir/examples/circadian_rythm.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.s
 .PHONY : examples/circadian_rythm.cpp.s
 
 examples/covid_seihr.o: examples/covid_seihr.cpp.o
@@ -265,7 +264,9 @@ examples/covid_seihr.o: examples/covid_seihr.cpp.o
 
 # target to build an object file
 examples/covid_seihr.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/covid_seihr.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o
 .PHONY : examples/covid_seihr.cpp.o
 
 examples/covid_seihr.i: examples/covid_seihr.cpp.i
@@ -273,7 +274,9 @@ examples/covid_seihr.i: examples/covid_seihr.cpp.i
 
 # target to preprocess a source file
 examples/covid_seihr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/covid_seihr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.i
 .PHONY : examples/covid_seihr.cpp.i
 
 examples/covid_seihr.s: examples/covid_seihr.cpp.s
@@ -281,7 +284,9 @@ examples/covid_seihr.s: examples/covid_seihr.cpp.s
 
 # target to generate assembly for a file
 examples/covid_seihr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/examples/covid_seihr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.s
 .PHONY : examples/covid_seihr.cpp.s
 
 examples/main.o: examples/main.cpp.o
@@ -289,7 +294,7 @@ examples/main.o: examples/main.cpp.o
 
 # target to build an object file
 examples/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/main.cpp.o
 .PHONY : examples/main.cpp.o
 
 examples/main.i: examples/main.cpp.i
@@ -297,7 +302,7 @@ examples/main.i: examples/main.cpp.i
 
 # target to preprocess a source file
 examples/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/main.cpp.i
 .PHONY : examples/main.cpp.i
 
 examples/main.s: examples/main.cpp.s
@@ -305,7 +310,7 @@ examples/main.s: examples/main.cpp.s
 
 # target to generate assembly for a file
 examples/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/examples/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_main.dir/build.make CMakeFiles/stochastic_main.dir/examples/main.cpp.s
 .PHONY : examples/main.cpp.s
 
 examples/seihr_main.o: examples/seihr_main.cpp.o
@@ -313,7 +318,7 @@ examples/seihr_main.o: examples/seihr_main.cpp.o
 
 # target to build an object file
 examples/seihr_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seir.dir/build.make CMakeFiles/seir.dir/examples/seihr_main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/seihr_main.cpp.o
 .PHONY : examples/seihr_main.cpp.o
 
 examples/seihr_main.i: examples/seihr_main.cpp.i
@@ -321,7 +326,7 @@ examples/seihr_main.i: examples/seihr_main.cpp.i
 
 # target to preprocess a source file
 examples/seihr_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seir.dir/build.make CMakeFiles/seir.dir/examples/seihr_main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/seihr_main.cpp.i
 .PHONY : examples/seihr_main.cpp.i
 
 examples/seihr_main.s: examples/seihr_main.cpp.s
@@ -329,7 +334,7 @@ examples/seihr_main.s: examples/seihr_main.cpp.s
 
 # target to generate assembly for a file
 examples/seihr_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seir.dir/build.make CMakeFiles/seir.dir/examples/seihr_main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seihr_example.dir/build.make CMakeFiles/seihr_example.dir/examples/seihr_main.cpp.s
 .PHONY : examples/seihr_main.cpp.s
 
 src/observer.o: src/observer.cpp.o
@@ -337,7 +342,7 @@ src/observer.o: src/observer.cpp.o
 
 # target to build an object file
 src/observer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/observer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/observer.cpp.o
 .PHONY : src/observer.cpp.o
 
 src/observer.i: src/observer.cpp.i
@@ -345,7 +350,7 @@ src/observer.i: src/observer.cpp.i
 
 # target to preprocess a source file
 src/observer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/observer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/observer.cpp.i
 .PHONY : src/observer.cpp.i
 
 src/observer.s: src/observer.cpp.s
@@ -353,7 +358,7 @@ src/observer.s: src/observer.cpp.s
 
 # target to generate assembly for a file
 src/observer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/observer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/observer.cpp.s
 .PHONY : src/observer.cpp.s
 
 src/reaction.o: src/reaction.cpp.o
@@ -361,7 +366,7 @@ src/reaction.o: src/reaction.cpp.o
 
 # target to build an object file
 src/reaction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/reaction.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/reaction.cpp.o
 .PHONY : src/reaction.cpp.o
 
 src/reaction.i: src/reaction.cpp.i
@@ -369,7 +374,7 @@ src/reaction.i: src/reaction.cpp.i
 
 # target to preprocess a source file
 src/reaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/reaction.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/reaction.cpp.i
 .PHONY : src/reaction.cpp.i
 
 src/reaction.s: src/reaction.cpp.s
@@ -377,7 +382,7 @@ src/reaction.s: src/reaction.cpp.s
 
 # target to generate assembly for a file
 src/reaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/reaction.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/reaction.cpp.s
 .PHONY : src/reaction.cpp.s
 
 src/simulator.o: src/simulator.cpp.o
@@ -385,7 +390,7 @@ src/simulator.o: src/simulator.cpp.o
 
 # target to build an object file
 src/simulator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/simulator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/simulator.cpp.o
 .PHONY : src/simulator.cpp.o
 
 src/simulator.i: src/simulator.cpp.i
@@ -393,7 +398,7 @@ src/simulator.i: src/simulator.cpp.i
 
 # target to preprocess a source file
 src/simulator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/simulator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/simulator.cpp.i
 .PHONY : src/simulator.cpp.i
 
 src/simulator.s: src/simulator.cpp.s
@@ -401,7 +406,7 @@ src/simulator.s: src/simulator.cpp.s
 
 # target to generate assembly for a file
 src/simulator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/simulator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/simulator.cpp.s
 .PHONY : src/simulator.cpp.s
 
 src/species.o: src/species.cpp.o
@@ -409,7 +414,7 @@ src/species.o: src/species.cpp.o
 
 # target to build an object file
 src/species.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/species.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/species.cpp.o
 .PHONY : src/species.cpp.o
 
 src/species.i: src/species.cpp.i
@@ -417,7 +422,7 @@ src/species.i: src/species.cpp.i
 
 # target to preprocess a source file
 src/species.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/species.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/species.cpp.i
 .PHONY : src/species.cpp.i
 
 src/species.s: src/species.cpp.s
@@ -425,7 +430,7 @@ src/species.s: src/species.cpp.s
 
 # target to generate assembly for a file
 src/species.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/species.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/species.cpp.s
 .PHONY : src/species.cpp.s
 
 src/vessel.o: src/vessel.cpp.o
@@ -433,7 +438,7 @@ src/vessel.o: src/vessel.cpp.o
 
 # target to build an object file
 src/vessel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/vessel.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/vessel.cpp.o
 .PHONY : src/vessel.cpp.o
 
 src/vessel.i: src/vessel.cpp.i
@@ -441,7 +446,7 @@ src/vessel.i: src/vessel.cpp.i
 
 # target to preprocess a source file
 src/vessel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/vessel.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/vessel.cpp.i
 .PHONY : src/vessel.cpp.i
 
 src/vessel.s: src/vessel.cpp.s
@@ -449,7 +454,7 @@ src/vessel.s: src/vessel.cpp.s
 
 # target to generate assembly for a file
 src/vessel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/vessel.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/vessel.cpp.s
 .PHONY : src/vessel.cpp.s
 
 src/visualization.o: src/visualization.cpp.o
@@ -457,7 +462,7 @@ src/visualization.o: src/visualization.cpp.o
 
 # target to build an object file
 src/visualization.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/visualization.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/visualization.cpp.o
 .PHONY : src/visualization.cpp.o
 
 src/visualization.i: src/visualization.cpp.i
@@ -465,7 +470,7 @@ src/visualization.i: src/visualization.cpp.i
 
 # target to preprocess a source file
 src/visualization.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/visualization.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/visualization.cpp.i
 .PHONY : src/visualization.cpp.i
 
 src/visualization.s: src/visualization.cpp.s
@@ -473,7 +478,7 @@ src/visualization.s: src/visualization.cpp.s
 
 # target to generate assembly for a file
 src/visualization.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ExamProject.dir/build.make CMakeFiles/ExamProject.dir/src/visualization.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stochastic_lib.dir/build.make CMakeFiles/stochastic_lib.dir/src/visualization.cpp.s
 .PHONY : src/visualization.cpp.s
 
 # Help Target
@@ -482,14 +487,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ExamProject"
 	@echo "... benchmark"
-	@echo "... circadian"
-	@echo "... main"
-	@echo "... seir"
+	@echo "... circadian_example"
+	@echo "... seihr_example"
+	@echo "... stochastic_lib"
+	@echo "... stochastic_main"
 	@echo "... benchmarks/benchmark.o"
 	@echo "... benchmarks/benchmark.i"
 	@echo "... benchmarks/benchmark.s"

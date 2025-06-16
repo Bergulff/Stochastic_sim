@@ -6,7 +6,8 @@
 #include <thread>
 
 namespace Stochastic {
-    // R4
+
+    // R4 - Main simulation interface
     void Simulator::runSimulation(Vessel& vessel, double endTime, Observer* observer) {
         std::function<void(double, const std::vector<std::shared_ptr<Species>>&)> cb = nullptr;
 
@@ -20,7 +21,8 @@ namespace Stochastic {
 
         vessel.simulate(endTime, cb);
     }
-    // R8
+
+    // R8 - Parallel simulation implementation
     template<typename ResultType>
     std::vector<ResultType> Simulator::runParallelSimulations(
         Vessel& vessel,
@@ -31,16 +33,22 @@ namespace Stochastic {
 
         std::vector<ResultType> results(numSimulations);
         std::vector<std::future<void>> futures;
+
+        // Calculate work distribution
         size_t simsPerThread = numSimulations / numThreads;
         size_t leftover = numSimulations % numThreads;
 
         size_t index = 0;
         for (size_t t = 0; t < numThreads; ++t) {
             size_t count = simsPerThread + (t < leftover ? 1 : 0);
+            if (count == 0) continue;
+
             size_t start = index, end = start + count;
-            // R8
+
+            // R8 - Launch parallel simulation tasks
             futures.push_back(std::async(std::launch::async, [&, start, end]() {
                 for (size_t i = start; i < end; ++i) {
+                    // Create independent copy for each simulation
                     Vessel copy = vessel;
                     copy.simulate(endTime);
                     results[i] = resultExtractor(copy);
@@ -49,13 +57,15 @@ namespace Stochastic {
             index = end;
         }
 
+        // Wait for all threads to complete
         for (auto& f : futures) f.get();
         return results;
     }
 
-    // R8
+    // R8 - Explicit template instantiation for common types
     template std::vector<size_t> Simulator::runParallelSimulations<size_t>(
         Vessel&, double, size_t, std::function<size_t(const Vessel&)>, size_t);
 
+    template std::vector<double> Simulator::runParallelSimulations<double>(
+        Vessel&, double, size_t, std::function<double(const Vessel&)>, size_t);
 } // namespace Stochastic
-

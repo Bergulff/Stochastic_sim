@@ -1,2 +1,0 @@
-/usr/bin/ar qc libExamProject.a CMakeFiles/ExamProject.dir/src/species.cpp.o CMakeFiles/ExamProject.dir/src/reaction.cpp.o CMakeFiles/ExamProject.dir/src/vessel.cpp.o CMakeFiles/ExamProject.dir/src/simulator.cpp.o CMakeFiles/ExamProject.dir/src/visualization.cpp.o CMakeFiles/ExamProject.dir/src/observer.cpp.o CMakeFiles/ExamProject.dir/examples/covid_seihr.cpp.o CMakeFiles/ExamProject.dir/examples/circadian_rythm.cpp.o
-/usr/bin/ranlib libExamProject.a

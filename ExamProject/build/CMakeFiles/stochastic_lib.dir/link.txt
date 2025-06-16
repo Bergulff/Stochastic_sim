@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstochastic_lib.a CMakeFiles/stochastic_lib.dir/src/species.cpp.o CMakeFiles/stochastic_lib.dir/src/reaction.cpp.o CMakeFiles/stochastic_lib.dir/src/vessel.cpp.o CMakeFiles/stochastic_lib.dir/src/simulator.cpp.o CMakeFiles/stochastic_lib.dir/src/observer.cpp.o CMakeFiles/stochastic_lib.dir/src/visualization.cpp.o
+/usr/bin/ranlib libstochastic_lib.a

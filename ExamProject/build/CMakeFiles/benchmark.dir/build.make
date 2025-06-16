@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject"
+CMAKE_SOURCE_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build"
+CMAKE_BINARY_DIR = "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/benchmark.dir/depend.make
@@ -73,31 +73,63 @@ CMakeFiles/benchmark.dir/codegen:
 .PHONY : CMakeFiles/benchmark.dir/codegen
 
 CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o: CMakeFiles/benchmark.dir/flags.make
-CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/ExamProject/benchmarks/benchmark.cpp
+CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/Stochastic_sim/ExamProject/benchmarks/benchmark.cpp
 CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o: CMakeFiles/benchmark.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o -MF CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o.d -o CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/benchmarks/benchmark.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o -MF CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o.d -o CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/benchmarks/benchmark.cpp"
 
 CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/benchmarks/benchmark.cpp" > CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/benchmarks/benchmark.cpp" > CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.i
 
 CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/benchmarks/benchmark.cpp" -o CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/benchmarks/benchmark.cpp" -o CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.s
+
+CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o: CMakeFiles/benchmark.dir/flags.make
+CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp
+CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o: CMakeFiles/benchmark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o -MF CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o.d -o CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp"
+
+CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp" > CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.i
+
+CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/circadian_rythm.cpp" -o CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.s
+
+CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o: CMakeFiles/benchmark.dir/flags.make
+CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o: /Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected\ Topics\ in\ Programming/Stochastic_sim/ExamProject/examples/covid_seihr.cpp
+CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o: CMakeFiles/benchmark.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o -MF CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o.d -o CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o -c "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/covid_seihr.cpp"
+
+CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/covid_seihr.cpp" > CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.i
+
+CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/examples/covid_seihr.cpp" -o CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.s
 
 # Object files for target benchmark
 benchmark_OBJECTS = \
-"CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o"
+"CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o" \
+"CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o" \
+"CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o"
 
 # External object files for target benchmark
 benchmark_EXTERNAL_OBJECTS =
 
 benchmark: CMakeFiles/benchmark.dir/benchmarks/benchmark.cpp.o
+benchmark: CMakeFiles/benchmark.dir/examples/circadian_rythm.cpp.o
+benchmark: CMakeFiles/benchmark.dir/examples/covid_seihr.cpp.o
 benchmark: CMakeFiles/benchmark.dir/build.make
-benchmark: libExamProject.a
+benchmark: libstochastic_lib.a
 benchmark: CMakeFiles/benchmark.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable benchmark"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/benchmark.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +141,6 @@ CMakeFiles/benchmark.dir/clean:
 .PHONY : CMakeFiles/benchmark.dir/clean
 
 CMakeFiles/benchmark.dir/depend:
-	cd "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/build/CMakeFiles/benchmark.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build" "/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/Stochastic_sim/ExamProject/build/CMakeFiles/benchmark.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/benchmark.dir/depend
 
