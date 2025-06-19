@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/stochastic_main.dir/examples/main.cpp.o CMakeFiles/stochastic_main.dir/examples/circadian_rythm.cpp.o CMakeFiles/stochastic_main.dir/examples/covid_seihr.cpp.o CMakeFiles/stochastic_main.dir/examples/catalytic_reaction.cpp.o -o stochastic_main  libstochastic_lib.a

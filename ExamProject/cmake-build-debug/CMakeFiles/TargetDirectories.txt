@@ -1,6 +1,0 @@
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/ExamProject.dir
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/SEIHR.dir
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/circadian.dir
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/benchmark.dir
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/nicolaibergulff/Desktop/AAU/8.Semester/Selected Topics in Programming/ExamProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

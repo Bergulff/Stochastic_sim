@@ -3,16 +3,26 @@
 //
 #include "../include/Stochastic/stochastic.h"
 #include <iostream>
+#include <fstream>
 
 using namespace Stochastic;
 
+
 int main() {
-    auto v = circadian_rhythm();
+    // R5
+    Vessel model = circadian_rhythm();
 
-    TrajectoryObserver obs;
-    Simulator::runSimulation(v, 48.0, &obs);
-    obs.saveToFile("circadian_trajectory.csv");
+    // R7
+    TrajectoryObserver observer;
+    Simulator::runSimulation(model, 200.0, &observer);
 
-    std::cout << "Circadian simulation complete.\n";
+    // R6
+    observer.saveToFile("output/circadian.csv");
+
+    // R2
+    std::string dot = model.to_dot();
+    std::ofstream dot_file("output/circadian.dot");
+    dot_file << dot;
+
     return 0;
 }

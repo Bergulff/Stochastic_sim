@@ -30,6 +30,10 @@ namespace Stochastic {
     public:
         explicit Vessel(const std::string& name);
 
+
+        Vessel(const Vessel& other);
+        Vessel& operator=(const Vessel& other);
+
         std::shared_ptr<Species> add(const std::string& name, size_t initial_count);
         void add(const ReactionBuilder& builder);
 

@@ -34,7 +34,6 @@ namespace Stochastic {
         std::vector<ResultType> results(numSimulations);
         std::vector<std::future<void>> futures;
 
-        // Calculate work distribution
         size_t simsPerThread = numSimulations / numThreads;
         size_t leftover = numSimulations % numThreads;
 
@@ -45,21 +44,19 @@ namespace Stochastic {
 
             size_t start = index, end = start + count;
 
-            // R8
             futures.push_back(std::async(std::launch::async, [&, start, end]() {
                 for (size_t i = start; i < end; ++i) {
-                    Vessel copy = vessel;
-                    copy.simulate(endTime);
+                    Vessel copy(vessel);
+
                     results[i] = resultExtractor(copy);
                 }
             }));
             index = end;
         }
 
-        for (auto& f : futures) f.get();
-        return results;
-    }
-
+    for (auto& f : futures) f.get();
+    return results;
+}
     // R8
     template std::vector<size_t> Simulator::runParallelSimulations<size_t>(
         Vessel&, double, size_t, std::function<size_t(const Vessel&)>, size_t);

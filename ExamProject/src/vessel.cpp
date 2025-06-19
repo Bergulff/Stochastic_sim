@@ -17,6 +17,68 @@ Vessel::Vessel(const std::string& name)
     environment_id_ = add_species("environment", 0)->id();
 }
 
+
+Vessel::Vessel(const Vessel& other)
+    : name_(other.name_),
+      next_species_id_(other.next_species_id_),
+      next_reaction_id_(other.next_reaction_id_),
+      environment_id_(other.environment_id_),
+      rng_(std::mt19937(std::random_device{}()))
+{
+    species_.reserve(other.species_.size());
+    for (const auto& sp : other.species_) {
+        auto new_species = std::make_shared<Species>(sp->name(), sp->count(), sp->id());
+        species_.push_back(new_species);
+    }
+
+    reactions_.reserve(other.reactions_.size());
+    for (const auto& reaction : other.reactions_) {
+        auto new_reaction = std::make_shared<Reaction>(
+            reaction->reactants(),
+            reaction->products(),
+            reaction->rate(),
+            reaction->id()
+        );
+        reactions_.push_back(new_reaction);
+    }
+
+    species_name_to_id_ = other.species_name_to_id_;
+}
+
+
+Vessel& Vessel::operator=(const Vessel& other) {
+    if (this != &other) {
+        name_ = other.name_;
+        next_species_id_ = other.next_species_id_;
+        next_reaction_id_ = other.next_reaction_id_;
+        environment_id_ = other.environment_id_;
+        rng_ = std::mt19937(std::random_device{}());
+
+        species_.clear();
+        reactions_.clear();
+
+        species_.reserve(other.species_.size());
+        for (const auto& sp : other.species_) {
+            auto new_species = std::make_shared<Species>(sp->name(), sp->count(), sp->id());
+            species_.push_back(new_species);
+        }
+
+        reactions_.reserve(other.reactions_.size());
+        for (const auto& reaction : other.reactions_) {
+            auto new_reaction = std::make_shared<Reaction>(
+                reaction->reactants(),
+                reaction->products(),
+                reaction->rate(),
+                reaction->id()
+            );
+            reactions_.push_back(new_reaction);
+        }
+
+        species_name_to_id_ = other.species_name_to_id_;
+    }
+    return *this;
+}
+
 // R3
 std::shared_ptr<Species> Vessel::add(const std::string& name, size_t initial_count) {
     return add_species(name, initial_count);
@@ -72,8 +134,13 @@ void Vessel::update_all_delays() {
 }
 
 // R4 & R6
-    void Vessel::simulate(double end_time, std::function<void(double, const std::vector<std::shared_ptr<Species>>&)> observer) {
+void Vessel::simulate(double end_time, std::function<void(double, const std::vector<std::shared_ptr<Species>>&)> observer) {
     double time = 0.0;
+
+
+    for (const auto& s : species_) {
+        std::cout << "  " << s->name() << " = " << s->count() << "\n";
+    }
 
     if (observer) observer(time, species_);
 
@@ -83,20 +150,25 @@ void Vessel::update_all_delays() {
 
         double dt = next->delay();
         if (dt == std::numeric_limits<double>::infinity() || !std::isfinite(dt)) {
+
             break;
         }
 
         time += dt;
         if (time >= end_time) break;
 
+
+
         try {
             if (next->can_proceed(species_)) {
                 next->execute(species_);
                 if (observer) observer(time, species_);
             } else {
+
                 break;
             }
         } catch (const SimulationException& e) {
+
             break;
         }
     }
@@ -118,7 +190,6 @@ std::string Vessel::reaction_to_string(size_t idx) const {
     std::stringstream ss;
     auto& r = reactions_[idx];
 
-    // Reactants
     bool first = true;
     for (const auto& [id, count] : r->reactants()) {
         if (!first) ss << " + ";
@@ -129,7 +200,6 @@ std::string Vessel::reaction_to_string(size_t idx) const {
 
     ss << " --(" << r->rate() << ")--> ";
 
-    // Products
     first = true;
     for (const auto& [id, count] : r->products()) {
         if (!first) ss << " + ";
@@ -141,7 +211,7 @@ std::string Vessel::reaction_to_string(size_t idx) const {
     return ss.str();
 }
 
-// R2 - Human readable system state
+// R2
 std::string Vessel::to_string() const {
     std::stringstream ss;
     ss << "Vessel: " << name_ << "\n";
@@ -156,25 +226,22 @@ std::string Vessel::to_string() const {
     return ss.str();
 }
 
-// R2 - DOT graph format for visualization
+// R2
 std::string Vessel::to_dot() const {
     std::stringstream ss;
     ss << "digraph \"" << name_ << "\" {\n";
     ss << "  rankdir=LR;\n";
 
-    // Species nodes
     for (const auto& s : species_) {
-        if (s->name() == "environment") continue; // Skip environment
+        if (s->name() == "environment") continue;
         ss << "  s" << s->id() << "[label=\"" << s->name() << "\\n(" << s->count()
            << ")\",shape=box,style=filled,fillcolor=cyan];\n";
     }
 
-    // Reaction nodes
     for (const auto& r : reactions_) {
         ss << "  r" << r->id() << "[label=\"" << r->rate()
            << "\",shape=oval,style=filled,fillcolor=yellow];\n";
 
-        // Edges from reactants to reaction
         for (const auto& [id, count] : r->reactants()) {
             if (species_[id]->name() == "environment") continue;
             ss << "  s" << id << " -> r" << r->id();
@@ -182,7 +249,6 @@ std::string Vessel::to_dot() const {
             ss << ";\n";
         }
 
-        // Edges from reaction to products
         for (const auto& [id, count] : r->products()) {
             if (species_[id]->name() == "environment") continue;
             ss << "  r" << r->id() << " -> s" << id;

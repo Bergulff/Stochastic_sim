@@ -9,7 +9,7 @@
 namespace Stochastic {
     // R6
     void TrajectoryObserver::observe(double time, const std::vector<Species*>& species) {
-        std::cout << "[OBSERVER] Recording at time: " << time << std::endl;
+
 
         std::map<std::string, size_t> snapshot;
         for (const auto* s : species) snapshot[s->name()] = s->count();
