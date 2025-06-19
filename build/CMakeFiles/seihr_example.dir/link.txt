@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/seihr_example.dir/examples/seihr_main.cpp.o CMakeFiles/seihr_example.dir/examples/covid_seihr.cpp.o -o seihr_example  libstochastic_lib.a
