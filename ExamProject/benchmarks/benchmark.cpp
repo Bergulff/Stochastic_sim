@@ -3,33 +3,20 @@
 #include <chrono>
 #include <thread>
 #include <iomanip>
+#include <fstream>
 
 using namespace Stochastic;
 using Clock = std::chrono::high_resolution_clock;
 
-void printBenchmarkHeader() {
-    std::cout << std::string(90, '-') << "\n";
-    std::cout << std::left << std::setw(60) << "Benchmark"
-              << std::setw(15) << "Time"
-              << std::setw(15) << "CPU"
-              << std::setw(15) << "Iterations\n";
-    std::cout << std::string(90, '-') << "\n";
+void printBenchmarkHeader(std::ostream& out) {
+    out << "Benchmark Time CPU Iterations\n";
 }
 
-void printBenchmarkResult(const std::string& name, double time_seconds, double cpu_time, int iterations) {
-    std::cout << std::left << std::setw(60) << name;
-
-    if (time_seconds >= 1.0)
-        std::cout << std::setw(15) << std::fixed << std::setprecision(2) << (time_seconds * 1000) << " ms";
-    else
-        std::cout << std::setw(15) << std::fixed << std::setprecision(2) << (time_seconds * 1000) << " ms";
-
-    if (cpu_time >= 1.0)
-        std::cout << std::setw(15) << std::fixed << std::setprecision(3) << (cpu_time * 1000) << " ms";
-    else
-        std::cout << std::setw(15) << std::fixed << std::setprecision(3) << (cpu_time * 1000) << " ms";
-
-    std::cout << std::setw(15) << iterations << "\n";
+void printBenchmarkResult(std::ostream& out, const std::string& name, double time_seconds, double cpu_time, int iterations) {
+    out << name << " "
+        << std::fixed << std::setprecision(2) << (time_seconds * 1000) << " ms "
+        << std::fixed << std::setprecision(3) << (cpu_time * 1000) << " ms "
+        << iterations << "\n";
 }
 
 int main() {
@@ -41,7 +28,13 @@ int main() {
     std::vector<size_t> thread_counts = {2, 4, 8, 10, 16};
     Vessel base_model = seir(N);
 
-    printBenchmarkHeader();
+    std::ofstream outfile("benchmark_results.txt");
+    if (!outfile) {
+        std::cerr << "Failed to open output file.\n";
+        return 1;
+    }
+
+    printBenchmarkHeader(outfile);
 
     // Serial benchmark
     auto t1 = Clock::now();
@@ -52,7 +45,7 @@ int main() {
     }
     auto t2 = Clock::now();
     std::chrono::duration<double> serial_duration = t2 - t1;
-    printBenchmarkResult("SIMULATE_BM/Simulations:100", serial_duration.count(), serial_duration.count(), runs);
+    printBenchmarkResult(outfile, "SIMULATE_BM/Simulations:100", serial_duration.count(), serial_duration.count(), runs);
 
     // Parallel benchmarks
     for (size_t num_threads : thread_counts) {
@@ -74,13 +67,9 @@ int main() {
         double cpu_time = parallel_duration.count() * num_threads;
 
         std::string label = "SIMULATE_PARALLEL_BM/Simulations:100/Threads:" + std::to_string(num_threads);
-        printBenchmarkResult(label, parallel_duration.count(), cpu_time, 1000);
+        printBenchmarkResult(outfile, label, parallel_duration.count(), cpu_time, 1000);
     }
 
+    outfile.close();
     return 0;
 }
-// Conclusion
-
-/*
- With multithreading and using more CPU's the processing time gets faster and faster
- */

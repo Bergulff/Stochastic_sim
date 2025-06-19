@@ -12,6 +12,20 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
 endif()
 
+# Doctest integration
+find_package(doctest QUIET)
+
+if(NOT doctest_FOUND)
+    include(FetchContent)
+    
+    FetchContent_Declare(
+        doctest
+        GIT_REPOSITORY https://github.com/doctest/doctest.git
+        GIT_TAG v2.4.11
+    )
+    
+    FetchContent_MakeAvailable(doctest)
+endif()
 
 include_directories(include)
 
